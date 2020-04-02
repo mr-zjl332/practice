@@ -1,0 +1,31 @@
+# Project: œÓƒø1
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = main.o linkedlish.o
+LINKOBJ  = main.o linkedlish.o
+LIBS     = -L"D:/Language/C”Ô—‘/Dev-C++5.11/Dev-Cpp/MinGW64/lib" -L"D:/Language/C”Ô—‘/Dev-C++5.11/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"D:/Language/C”Ô—‘/Dev-C++5.11/Dev-Cpp/MinGW64/include" -I"D:/Language/C”Ô—‘/Dev-C++5.11/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/Language/C”Ô—‘/Dev-C++5.11/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"D:/Language/C”Ô—‘/Dev-C++5.11/Dev-Cpp/MinGW64/include" -I"D:/Language/C”Ô—‘/Dev-C++5.11/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/Language/C”Ô—‘/Dev-C++5.11/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"D:/Language/C”Ô—‘/Dev-C++5.11/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = œÓƒø1.exe
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.c
+	$(CC) -c main.c -o main.o $(CFLAGS)
+
+linkedlish.o: linkedlish.c
+	$(CC) -c linkedlish.c -o linkedlish.o $(CFLAGS)
